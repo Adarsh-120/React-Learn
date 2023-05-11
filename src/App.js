@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import ClassComponent from "./components/ClassComponent";
+import FunctionComponent from "./components/FunctionComponent";
+import { useState } from "react";
 function App() {
+  const author = "Adarsh";
+
+  const [name, setName] = useState("AKC");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Class Components</p>
+      <ClassComponent />
+
+      <br />
+
+      <p>Function Components</p>
+      <FunctionComponent
+        name={name}
+        age={20}
+        author={author}
+        setName={setName}
+      />
     </div>
   );
 }
